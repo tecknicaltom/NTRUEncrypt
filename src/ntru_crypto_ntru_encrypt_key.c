@@ -360,7 +360,7 @@ ntru_crypto_ntru_encrypt_key_recreate_pubkey_blob(
                                                                packed pubkey */
     uint8_t const                *packed_pubkey,      /*  in - pointer to the
                                                                packed pubkey */
-    uint8_t                       pubkey_pack_type,   /* out - pubkey packing
+    uint8_t                       pubkey_pack_type,   /*  in - pubkey packing
                                                                type */
     uint8_t                      *pubkey_blob)        /* out - addr for the
                                                                pubkey blob */
