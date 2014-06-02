@@ -87,26 +87,26 @@ ntru_crypto_ntru_encrypt(
                                                  no. of octets in ciphertext */
     uint8_t        *ct)              /*    out - address for ciphertext */
 {
-    NTRU_ENCRYPT_PARAM_SET *params = NULL;
-    uint8_t const          *pubkey_packed = NULL;
-    uint8_t                 pubkey_pack_type = 0x00;
-    uint16_t                packed_ct_len;
-    size_t                  scratch_buf_len;
-    uint32_t                dr;
-    uint32_t                dr1 = 0;
-    uint32_t                dr2 = 0;
-    uint32_t                dr3 = 0;
-    uint16_t                ring_mult_tmp_len;
-    uint16_t               *scratch_buf = NULL;
-    uint16_t               *ringel_buf = NULL;
-    uint16_t               *r_buf = NULL;
-    uint8_t                *b_buf = NULL;
-    uint8_t                *tmp_buf = NULL;
-    bool                    msg_rep_good = FALSE;
-    NTRU_CRYPTO_HASH_ALGID  hash_algid;
-    uint8_t                 md_len;
-    uint16_t                mod_q_mask;
-    uint32_t                result = NTRU_OK;
+    NTRU_ENCRYPT_PARAM_SET       *params = NULL;
+    uint8_t const                *pubkey_packed = NULL;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type = 0x00;
+    uint16_t                      packed_ct_len;
+    size_t                        scratch_buf_len;
+    uint32_t                      dr;
+    uint32_t                      dr1 = 0;
+    uint32_t                      dr2 = 0;
+    uint32_t                      dr3 = 0;
+    uint16_t                      ring_mult_tmp_len;
+    uint16_t                     *scratch_buf = NULL;
+    uint16_t                     *ringel_buf = NULL;
+    uint16_t                     *r_buf = NULL;
+    uint8_t                      *b_buf = NULL;
+    uint8_t                      *tmp_buf = NULL;
+    bool                          msg_rep_good = FALSE;
+    NTRU_CRYPTO_HASH_ALGID        hash_algid;
+    uint8_t                       md_len;
+    uint16_t                      mod_q_mask;
+    uint32_t                      result = NTRU_OK;
 
     /* check for bad parameters */
 
@@ -416,35 +416,35 @@ ntru_crypto_ntru_decrypt(
                                                  no. of octets in plaintext */
     uint8_t       *pt)               /*    out - address for plaintext */
 {
-    NTRU_ENCRYPT_PARAM_SET *params = NULL;
-    uint8_t const          *privkey_packed = NULL;
-    uint8_t const          *pubkey_packed = NULL;
-    uint8_t                 privkey_pack_type = 0x00;
-    uint8_t                 pubkey_pack_type = 0x00;
-    size_t                  scratch_buf_len;
-    uint32_t                dF_r;
-    uint32_t                dF_r1 = 0;
-    uint32_t                dF_r2 = 0;
-    uint32_t                dF_r3 = 0;
-    uint16_t                ring_mult_tmp_len;
-    uint16_t               *scratch_buf = NULL;
-    uint16_t               *ringel_buf1 = NULL;
-    uint16_t               *ringel_buf2 = NULL;
-    uint16_t               *i_buf = NULL;
-    uint8_t                *m_buf = NULL;
-    uint8_t                *tmp_buf = NULL;
-    uint8_t                *Mtrin_buf = NULL;
-    uint8_t                *M_buf = NULL;
-    uint8_t                *ptr = NULL;
-    NTRU_CRYPTO_HASH_ALGID  hash_algid;
-    uint8_t                 md_len;
-    uint16_t                mod_q_mask;
-    uint16_t                q_mod_p;
-    uint16_t                cm_len = 0;
-    uint16_t                num_zeros;
-    uint16_t                i;
-    bool                    decryption_ok = TRUE;
-    uint32_t                result = NTRU_OK;
+    NTRU_ENCRYPT_PARAM_SET       *params = NULL;
+    uint8_t const                *privkey_packed = NULL;
+    uint8_t const                *pubkey_packed = NULL;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    privkey_pack_type = 0x00;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type = 0x00;
+    size_t                        scratch_buf_len;
+    uint32_t                      dF_r;
+    uint32_t                      dF_r1 = 0;
+    uint32_t                      dF_r2 = 0;
+    uint32_t                      dF_r3 = 0;
+    uint16_t                      ring_mult_tmp_len;
+    uint16_t                     *scratch_buf = NULL;
+    uint16_t                     *ringel_buf1 = NULL;
+    uint16_t                     *ringel_buf2 = NULL;
+    uint16_t                     *i_buf = NULL;
+    uint8_t                      *m_buf = NULL;
+    uint8_t                      *tmp_buf = NULL;
+    uint8_t                      *Mtrin_buf = NULL;
+    uint8_t                      *M_buf = NULL;
+    uint8_t                      *ptr = NULL;
+    NTRU_CRYPTO_HASH_ALGID        hash_algid;
+    uint8_t                       md_len;
+    uint16_t                      mod_q_mask;
+    uint16_t                      q_mod_p;
+    uint16_t                      cm_len = 0;
+    uint16_t                      num_zeros;
+    uint16_t                      i;
+    bool                          decryption_ok = TRUE;
+    uint32_t                      result = NTRU_OK;
 
     /* check for bad parameters */
 
@@ -860,26 +860,26 @@ ntru_crypto_ntru_encrypt_keygen(
     uint8_t                   *privkey_blob)     /*    out - address for
                                                              private key blob */
 {
-    NTRU_ENCRYPT_PARAM_SET *params = NULL;
-    uint16_t                public_key_blob_len;
-    uint16_t                private_key_blob_len;
-    uint8_t                 pubkey_pack_type;
-    uint8_t                 privkey_pack_type;
-    size_t                  scratch_buf_len;
-    uint32_t                dF;
-    uint32_t                dF1 = 0;
-    uint32_t                dF2 = 0;
-    uint32_t                dF3 = 0;
-    uint16_t               *scratch_buf = NULL;
-    uint16_t               *ringel_buf1 = NULL;
-    uint16_t               *ringel_buf2 = NULL;
-    uint16_t               *F_buf = NULL;
-    uint8_t                *tmp_buf = NULL;
-    uint16_t                mod_q_mask;
-    NTRU_CRYPTO_HASH_ALGID  hash_algid;
-    uint8_t                 md_len;
-    uint16_t                seed_len;
-    uint32_t                result = NTRU_OK;
+    NTRU_ENCRYPT_PARAM_SET       *params = NULL;
+    uint16_t                      public_key_blob_len;
+    uint16_t                      private_key_blob_len;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    privkey_pack_type;
+    size_t                        scratch_buf_len;
+    uint32_t                      dF;
+    uint32_t                      dF1 = 0;
+    uint32_t                      dF2 = 0;
+    uint32_t                      dF3 = 0;
+    uint16_t                     *scratch_buf = NULL;
+    uint16_t                     *ringel_buf1 = NULL;
+    uint16_t                     *ringel_buf2 = NULL;
+    uint16_t                     *F_buf = NULL;
+    uint8_t                      *tmp_buf = NULL;
+    uint16_t                      mod_q_mask;
+    NTRU_CRYPTO_HASH_ALGID        hash_algid;
+    uint8_t                       md_len;
+    uint16_t                      seed_len;
+    uint32_t                      result = NTRU_OK;
 
     /* get a pointer to the parameter-set parameters */
 
@@ -1243,11 +1243,11 @@ ntru_crypto_ntru_encrypt_publicKey2SubjectPublicKeyInfo(
     uint8_t       *encoded_subjectPublicKeyInfo)
                                     /*    out - address for encoded info */
 {
-    NTRU_ENCRYPT_PARAM_SET *params = NULL;
-    uint8_t const          *pubkey_packed = NULL;
-    uint8_t                 pubkey_pack_type;
-    uint16_t                packed_pubkey_len;
-    uint16_t                encoded_len;
+    NTRU_ENCRYPT_PARAM_SET       *params = NULL;
+    uint8_t const                *pubkey_packed = NULL;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type;
+    uint16_t                      packed_pubkey_len;
+    uint16_t                      encoded_len;
 
     /* check for bad parameters */
 
@@ -1349,12 +1349,12 @@ ntru_crypto_ntru_encrypt_subjectPublicKeyInfo2PublicKey(
                                                  data following the 
                                                  subjectPublicKeyInfo */
 {
-    NTRU_ENCRYPT_PARAM_SET *params = NULL;
-    uint8_t                 prefix_buf[41];
-    bool                    der_id_valid;
-    uint16_t                packed_pubkey_len = 0;
-    uint8_t                 pubkey_pack_type;
-    uint16_t                public_key_blob_len;
+    NTRU_ENCRYPT_PARAM_SET       *params = NULL;
+    uint8_t                       prefix_buf[41];
+    bool                          der_id_valid;
+    uint16_t                      packed_pubkey_len = 0;
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type;
+    uint16_t                      public_key_blob_len;
 
     /* check for bad parameters */
 

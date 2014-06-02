@@ -48,21 +48,21 @@
 
 bool
 ntru_crypto_ntru_encrypt_key_parse(
-    bool                     pubkey_parse,      /*  in - if parsing pubkey
-                                                         blob */
-    uint16_t                 key_blob_len,      /*  in - no. octets in key
-                                                         blob */
-    uint8_t const           *key_blob,          /*  in - pointer to key blob */
-    uint8_t                 *pubkey_pack_type,  /* out - addr for pubkey
-                                                         packing type */
-    uint8_t                 *privkey_pack_type, /* out - addr for privkey
-                                                         packing type */
-    NTRU_ENCRYPT_PARAM_SET **params,            /* out - addr for ptr to
-                                                         parameter set */
-    uint8_t const          **pubkey,            /* out - addr for ptr to
-                                                         packed pubkey */
-    uint8_t const          **privkey)           /* out - addr for ptr to
-                                                         packed privkey */
+    bool                          pubkey_parse,      /*  in - if parsing pubkey
+                                                              blob */
+    uint16_t                      key_blob_len,      /*  in - no. octets in key
+                                                              blob */
+    uint8_t const                *key_blob,          /*  in - pointer to key blob */
+    NTRU_ENCRYPT_KEY_PACK_TYPE   *pubkey_pack_type,  /* out - addr for pubkey
+                                                              packing type */
+    NTRU_ENCRYPT_KEY_PACK_TYPE   *privkey_pack_type, /* out - addr for privkey
+                                                              packing type */
+    NTRU_ENCRYPT_PARAM_SET      **params,            /* out - addr for ptr to
+                                                              parameter set */
+    uint8_t const               **pubkey,            /* out - addr for ptr to
+                                                              packed pubkey */
+    uint8_t const               **privkey)           /* out - addr for ptr to
+                                                              packed privkey */
 {
     uint8_t tag;
 
@@ -246,12 +246,12 @@ ntru_crypto_ntru_encrypt_key_get_blob_params(
     NTRU_ENCRYPT_PARAM_SET const *params,             /*  in - pointer to
                                                                param set
                                                                parameters */
-    uint8_t                      *pubkey_pack_type,   /* out - addr for pubkey
+    NTRU_ENCRYPT_KEY_PACK_TYPE   *pubkey_pack_type,   /* out - addr for pubkey
                                                                packing type */
     uint16_t                     *pubkey_blob_len,    /* out - addr for no. of
                                                                bytes in
                                                                pubkey blob */
-    uint8_t                      *privkey_pack_type,  /* out - addr for privkey
+    NTRU_ENCRYPT_KEY_PACK_TYPE   *privkey_pack_type,  /* out - addr for privkey
                                                                packing type */
     uint16_t                     *privkey_blob_len)   /* out - addr for no. of
                                                                bytes in
@@ -317,7 +317,7 @@ ntru_crypto_ntru_encrypt_key_create_pubkey_blob(
     uint16_t const               *pubkey,             /*  in - pointer to the
                                                                coefficients
                                                                of the pubkey */
-    uint8_t                       pubkey_pack_type,   /* out - pubkey packing
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type,   /*  in - pubkey packing
                                                                type */
     uint8_t                      *pubkey_blob)        /* out - addr for the
                                                                pubkey blob */
@@ -360,7 +360,7 @@ ntru_crypto_ntru_encrypt_key_recreate_pubkey_blob(
                                                                packed pubkey */
     uint8_t const                *packed_pubkey,      /*  in - pointer to the
                                                                packed pubkey */
-    uint8_t                       pubkey_pack_type,   /*  in - pubkey packing
+    NTRU_ENCRYPT_KEY_PACK_TYPE    pubkey_pack_type,   /*  in - pubkey packing
                                                                type */
     uint8_t                      *pubkey_blob)        /* out - addr for the
                                                                pubkey blob */
@@ -404,7 +404,7 @@ ntru_crypto_ntru_encrypt_key_create_privkey_blob(
     uint16_t const               *privkey,            /*  in - pointer to the
                                                                indices of the
                                                                privkey */
-    uint8_t                       privkey_pack_type,  /*  in - privkey packing
+    NTRU_ENCRYPT_KEY_PACK_TYPE    privkey_pack_type,  /*  in - privkey packing
                                                                type */
     uint8_t                      *buf,                /*  in - temp, N bytes */
     uint8_t                      *privkey_blob)       /* out - addr for the
